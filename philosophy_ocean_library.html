@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>کتابخانه فلسفه | پاسخ با دیدگاه فیلسوفان</title>
+  <style>
+    /* اگر فونت وزیر/وزیرمتن روی سیستم نصب باشد استفاده می‌شود. فایل کاملاً آفلاین است. */
+    :root{
+      --blue-950:#061323;
+      --blue-900:#092139;
+      --blue-800:#0c3557;
+      --blue-500:#1c9de8;
+      --cyan:#6ee7f9;
+      --white:#f8fdff;
+      --glass:rgba(255,255,255,.15);
+      --glass-2:rgba(255,255,255,.09);
+      --pink:#ff8ad8;
+      --pink-2:#ffd2ef;
+      --green:#73f6b4;
+      --green-2:#d5ffe9;
+      --ink:#eaf8ff;
+      --muted:#b7d8e8;
+      --dark-text:#092033;
+      --line:rgba(255,255,255,.22);
+      --shadow:0 24px 80px rgba(0,0,0,.28);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Vazirmatn,Vazir,Tahoma,Arial,sans-serif;
+      color:var(--ink);
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,138,216,.46), transparent 26%),
+        radial-gradient(circle at 86% 15%, rgba(115,246,180,.35), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(110,231,249,.35), transparent 33%),
+        linear-gradient(145deg, var(--blue-950), var(--blue-900) 45%, #0c3b63 100%);
+      overflow-x:hidden;
+      line-height:1.85;
+    }
+    body:before, body:after{
+      content:""; position:fixed; inset:auto; pointer-events:none; z-index:-1; opacity:.6;
+      filter:blur(.2px);
+    }
+    body:before{
+      width:920px;height:920px;left:-250px;top:-260px;border-radius:44% 56% 64% 36%;
+      background:conic-gradient(from 160deg, transparent, rgba(110,231,249,.25), rgba(255,138,216,.18), transparent);
+      animation:floatA 18s ease-in-out infinite alternate;
+    }
+    body:after{
+      width:780px;height:780px;right:-260px;bottom:-320px;border-radius:60% 40% 42% 58%;
+      background:conic-gradient(from 20deg, rgba(115,246,180,.20), transparent, rgba(28,157,232,.22), transparent);
+      animation:floatB 22s ease-in-out infinite alternate;
+    }
+    @keyframes floatA{to{transform:translate(40px,35px) rotate(18deg)}}
+    @keyframes floatB{to{transform:translate(-50px,-35px) rotate(-16deg)}}
+    .waves{
+      position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.27;
+      background-image:
+        linear-gradient(110deg, transparent 0 45%, rgba(255,255,255,.12) 48%, transparent 52% 100%),
+        repeating-radial-gradient(ellipse at 50% 120%, transparent 0 28px, rgba(255,255,255,.08) 29px 30px);
+      mix-blend-mode:screen;
+    }
+    main{max-width:1320px;margin:auto;padding:28px 18px 48px}
+    .hero{
+      position:relative; overflow:hidden;
+      border:1px solid var(--line); border-radius:34px; padding:30px;
+      background:linear-gradient(160deg, rgba(255,255,255,.18), rgba(255,255,255,.075));
+      box-shadow:var(--shadow); backdrop-filter: blur(18px);
+    }
+    .hero:before{
+      content:"";position:absolute;inset:-2px;background:
+        radial-gradient(circle at 5% 20%, rgba(255,138,216,.26), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(115,246,180,.21), transparent 28%),
+        linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+      pointer-events:none;
+    }
+    .hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:center}
+    h1{margin:0 0 10px;font-size:clamp(28px,5vw,58px);line-height:1.18;letter-spacing:-1.5px}
+    .gradient-text{
+      background:linear-gradient(90deg,var(--white),var(--cyan),var(--pink-2),var(--green-2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .lead{font-size:17px;color:var(--muted);max-width:850px;margin:0}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .badge{padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.09);font-size:13px;color:#eafaff}
+    .orb-card{min-height:220px;border:1px solid var(--line);border-radius:28px;background:rgba(6,19,35,.35);display:grid;place-items:center;position:relative;overflow:hidden}
+    .orb{width:145px;height:145px;border-radius:50%;background:
+      radial-gradient(circle at 35% 28%, #fff, #b9ffff 16%, #7df5e0 34%, #239fe6 58%, #093d72 78%);
+      box-shadow:0 0 60px rgba(110,231,249,.45), inset -18px -22px 40px rgba(0,0,0,.28);
+      animation:pulse 4.5s ease-in-out infinite;
+    }
+    @keyframes pulse{50%{transform:translateY(-8px) scale(1.035)}}
+    .orb-card p{position:absolute;bottom:16px;margin:0;color:var(--muted);font-size:13px;text-align:center;padding:0 16px}
+    .card{
+      border:1px solid var(--line); border-radius:var(--radius); padding:20px; margin-top:18px;
+      background:linear-gradient(160deg, rgba(255,255,255,.16), rgba(255,255,255,.075));
+      box-shadow:0 16px 55px rgba(0,0,0,.18); backdrop-filter: blur(16px);
+    }
+    .ask-grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    label{display:block;color:#d7f4ff;font-size:13px;margin:0 0 7px}
+    textarea,input,select,button{
+      font:inherit;border-radius:18px;border:1px solid var(--line);outline:none;
+    }
+    textarea,input,select{
+      width:100%;background:rgba(4,15,29,.62);color:var(--white);padding:14px 15px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    textarea{min-height:165px;resize:vertical;line-height:1.9}
+    textarea::placeholder,input::placeholder{color:rgba(234,248,255,.54)}
+    .controls{display:grid;gap:11px}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    button{cursor:pointer;padding:12px 14px;font-weight:800;color:var(--dark-text);border:0;background:linear-gradient(135deg,var(--cyan),var(--green));transition:.18s transform,.18s filter;box-shadow:0 12px 26px rgba(0,0,0,.22)}
+    button:hover{transform:translateY(-2px);filter:saturate(1.1)}
+    button.secondary{background:rgba(255,255,255,.12);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+    button.pink{background:linear-gradient(135deg,var(--pink),#fff0fa)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{border:1px solid var(--line);background:rgba(255,255,255,.10);border-radius:999px;padding:7px 10px;font-size:13px;cursor:pointer;user-select:none;transition:.15s}
+    .chip.active{background:linear-gradient(135deg,rgba(110,231,249,.32),rgba(255,138,216,.24));border-color:rgba(255,255,255,.45);box-shadow:0 0 0 2px rgba(110,231,249,.08)}
+    .mini{font-size:12px;color:var(--muted)}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+    h2{margin:0;font-size:25px;color:#fff}
+    .answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px}
+    .answer-card{
+      position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;padding:17px;background:rgba(5,17,32,.52);
+      box-shadow:0 12px 35px rgba(0,0,0,.15);
+    }
+    .answer-card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--cyan),var(--pink),var(--green));opacity:.8}
+    .answer-head{display:flex;gap:12px;align-items:center;margin-top:3px}
+    .avatar{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:22px;font-weight:900;color:var(--dark-text);background:linear-gradient(135deg,#fff,var(--cyan));box-shadow:0 8px 20px rgba(0,0,0,.2)}
+    .answer-card h3{margin:0;font-size:18px}.era{font-size:12px;color:var(--muted)}
+    .answer-text{color:#e9fbff;margin:13px 0 0;text-align:justify}
+    .quote{border-right:3px solid var(--pink);padding:8px 11px;margin-top:12px;background:rgba(255,138,216,.08);border-radius:12px;color:#ffe9f8;font-size:13px}
+    .meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.meta span{font-size:11px;color:#cdefff;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px 8px;background:rgba(255,255,255,.06)}
+    .library{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}
+    .philo-card{border:1px solid var(--line);border-radius:22px;padding:14px;background:rgba(255,255,255,.08);transition:.18s transform,.18s background;cursor:pointer}
+    .philo-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.13)}
+    .philo-card h3{margin:0 0 4px}.philo-card p{margin:8px 0 0;color:var(--muted);font-size:13px}.philo-card .tagline{color:#fff;font-size:13px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border:1px solid var(--line);border-radius:22px;padding:16px;background:rgba(5,17,32,.42)}
+    .panel ul{margin:8px 0 0;padding-right:20px;color:#dff7ff}.panel li{margin:6px 0}
+    .footer{text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+    .toast{position:fixed;left:18px;bottom:18px;background:rgba(4,15,29,.86);border:1px solid var(--line);border-radius:18px;padding:12px 14px;color:#fff;box-shadow:var(--shadow);transform:translateY(20px);opacity:0;pointer-events:none;transition:.2s;z-index:20}.toast.show{transform:none;opacity:1}
+    @media(max-width:900px){.hero-content,.ask-grid,.two-col{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.orb-card{min-height:170px}.orb{width:110px;height:110px}.btn-row{grid-template-columns:1fr}main{padding:14px}.hero{padding:20px}}
+  </style>
+</head>
+<body>
+<div class="waves"></div>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <h1><span class="gradient-text">کتابخانهٔ اقیانوسی فلسفه</span></h1>
+        <p class="lead">سؤال خودت را بپرس و همان مسئله را از چندین دریچه ببین: افلاطون، سقراط، ارسطو، اپیکور، نیچه، سارتر، کامو، هایدگر، مارکوس اورلیوس و فیلسوفان دیگر. این صفحه کاملاً آفلاین است و پاسخ‌ها را با یک موتور تفسیری/آموزشی داخل خود HTML می‌سازد.</p>
+        <div class="hero-badges">
+          <span class="badge">UI شفاف اقیانوسی</span>
+          <span class="badge">آبی + سفید + صورتی + سبز</span>
+          <span class="badge">فونت وزیر/وزیرمتن</span>
+          <span class="badge">پاسخ چنددیدگاهی</span>
+          <span class="badge">بدون نیاز به اینترنت</span>
+        </div>
+      </div>
+      <div class="orb-card">
+        <div class="orb"></div>
+        <p>هر پرسش، مثل موجی است که در ساحل چند فلسفه می‌شکند.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="ask">
+    <div class="section-title">
+      <h2>پرسش فلسفی</h2>
+      <span class="mini">نمونه: «معنای زندگی چیست؟»، «چطور با رنج کنار بیایم؟»، «آزادی یعنی چه؟»</span>
+    </div>
+    <div class="ask-grid">
+      <div>
+        <label for="question">سؤال خودت را بنویس</label>
+        <textarea id="question" placeholder="مثلاً: آیا انسان واقعاً آزاد است؟ یا خوشبختی یعنی چه؟"></textarea>
+        <div class="chips" id="quickQuestions"></div>
+      </div>
+      <div class="controls">
+        <div>
+          <label for="mode">حالت پاسخ</label>
+          <select id="mode">
+            <option value="balanced">متعادل و کاربردی</option>
+            <option value="deep">عمیق‌تر و تحلیلی‌تر</option>
+            <option value="short">خلاصه و مستقیم</option>
+            <option value="poetic">ادبی‌تر و تأملی‌تر</option>
+          </select>
+        </div>
+        <div>
+          <label for="filterSchool">فیلتر مکتب/حال‌وهوا</label>
+          <select id="filterSchool">
+            <option value="all">همه فیلسوفان</option>
+            <option value="ancient">یونان باستان</option>
+            <option value="hellenistic">هلنیستی/رواقی</option>
+            <option value="modern">مدرن</option>
+            <option value="existential">اگزیستانسیال/پوچی</option>
+            <option value="eastern">شرقی/عرفانی</option>
+          </select>
+        </div>
+        <div>
+          <label for="countSelect">تعداد دیدگاه‌ها</label>
+          <select id="countSelect">
+            <option value="6">۶ دیدگاه</option>
+            <option value="9" selected>۹ دیدگاه</option>
+            <option value="12">۱۲ دیدگاه</option>
+            <option value="all">همه دیدگاه‌ها</option>
+          </select>
+        </div>
+        <div class="btn-row">
+          <button id="answerBtn">پاسخ بده</button>
+          <button class="secondary" id="clearBtn">پاک کردن</button>
+        </div>
+        <div class="btn-row">
+          <button class="pink" id="randomBtn">پرسش تصادفی</button>
+          <button class="secondary" id="copyBtn">کپی پاسخ‌ها</button>
+        </div>
+        <p class="mini">تذکر: پاسخ‌ها بازسازی آموزشی از دیدگاه‌ها هستند، نه نقل‌قول قطعی یا مشاوره تخصصی.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="resultsCard">
+    <div class="section-title">
+      <h2>پاسخ فیلسوفان</h2>
+      <span class="mini" id="resultMeta">هنوز سؤالی پرسیده نشده است.</span>
+    </div>
+    <div class="answers" id="answers"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-title">
+      <h2>کتابخانهٔ فیلسوفان</h2>
+      <span class="mini">روی هر فیلسوف کلیک کن تا با همان زاویه پاسخ بگیری.</span>
+    </div>
+    <div class="library" id="library"></div>
+  </section>
+
+  <section class="card">
+    <h2>راهنمای خواندن پاسخ‌ها</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3>این ابزار چه کار می‌کند؟</h3>
+        <ul>
+          <li>سؤال تو را از نظر موضوعی تشخیص می‌دهد: معنا، مرگ، آزادی، اخلاق، عشق، رنج، شناخت، عدالت، خدا، تکنولوژی و...</li>
+          <li>برای هر فیلسوف، پاسخ را با محورهای فکری همان فیلسوف ترکیب می‌کند.</li>
+          <li>به‌جای یک جواب قطعی، چند پاسخ متضاد/مکمل می‌دهد تا مسئله را چندبعدی ببینی.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>محدودیت مهم</h3>
+        <ul>
+          <li>این صفحه یک موتور آموزشی آفلاین است، نه مدل زبانی آنلاین.</li>
+          <li>پاسخ‌ها «تفسیر» هستند، نه متن دقیق کتاب‌های فیلسوفان.</li>
+          <li>برای تحقیق دانشگاهی، منابع اصلی مثل «جمهوری»، «اخلاق نیکوماخوسی»، «هستی و زمان»، «افسانه سیزیف» و... را هم بررسی کن.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <p class="footer">ساخته شده به‌صورت تک‌فایل HTML/CSS/JS — مناسب استفاده آفلاین، ارائه، تمرین فلسفی و گفت‌وگوی کلاسی.</p>
+</main>
+<div class="toast" id="toast">کپی شد.</div>
+
+<script>
+'use strict';
+
+const philosophers = [
+  {id:'socrates', name:'سقراط', latin:'Socrates', era:'یونان باستان', school:'ancient', icon:'Σ', core:'پرسشگری، خودشناسی، آزمودن زندگی، فضیلت به‌مثابه دانایی', tagline:'زندگی نیازمند پرسش است.', quote:'زندگیِ نیازموده ارزش زیستن ندارد.', method:'به‌جای جواب نهایی، از تو می‌خواهد تعریف‌هایت را روشن کنی و تناقض‌ها را ببینی.'},
+  {id:'plato', name:'افلاطون', latin:'Plato', era:'یونان باستان', school:'ancient', icon:'△', core:'عالم مُثُل، خیر، عدالت، تربیت روح، حقیقت فراتر از سایه‌ها', tagline:'از سایه‌ها به سوی صورت حقیقت.', quote:'دانش حقیقی روکردن روح به سوی خیر است.', method:'مسئله را با نسبت آن با حقیقت، خیر و صورت کامل چیزها می‌سنجد.'},
+  {id:'aristotle', name:'ارسطو', latin:'Aristotle', era:'یونان باستان', school:'ancient', icon:'Λ', core:'اعتدال، غایت، فضیلت، عقل عملی، شکوفایی انسانی', tagline:'فضیلت در عادت و میانه‌روی ساخته می‌شود.', quote:'خوشبختی فعالیت نفس بر پایه فضیلت است.', method:'به هدف، علت‌ها، عادت‌ها و حد میانه نگاه می‌کند.'},
+  {id:'epicurus', name:'اپیکور', latin:'Epicurus', era:'هلنیستی', school:'hellenistic', icon:'☉', core:'آرامش، نبود رنج، دوستی، ساده‌زیستی، ترس‌زدایی از مرگ', tagline:'لذت عمیق یعنی آرامش پایدار.', quote:'مرگ برای ما چیزی نیست؛ وقتی ما هستیم، مرگ نیست.', method:'می‌پرسد آیا این مسئله واقعاً رنج ضروری است یا ترسی ساخته ذهن؟'},
+  {id:'marcus', name:'مارکوس اورلیوس', latin:'Marcus Aurelius', era:'رواقی', school:'hellenistic', icon:'♜', core:'کنترل درونی، پذیرش طبیعت، وظیفه، انضباط ذهن', tagline:'آنچه در اختیار توست، داوری و کردار توست.', quote:'مانعِ عمل، خود راهِ عمل می‌شود.', method:'مسئله را به دو بخش تقسیم می‌کند: آنچه در کنترل توست و آنچه نیست.'},
+  {id:'nietzsche', name:'نیچه', latin:'Nietzsche', era:'مدرن', school:'modern', icon:'⚡', core:'اراده معطوف به قدرت، آفرینش ارزش، نقد اخلاق گله‌ای، آری‌گویی به زندگی', tagline:'ارزش‌ها را فقط به ارث نبر؛ بیافرین.', quote:'بشو آن که هستی.', method:'می‌پرسد این سؤال از نیرو، ترس، ضعف یا آفرینندگی تو می‌آید؟'},
+  {id:'sartre', name:'سارتر', latin:'Sartre', era:'اگزیستانسیالیسم', school:'existential', icon:'✦', core:'آزادی، مسئولیت، انتخاب، اصالت، تقدم وجود بر ماهیت', tagline:'تو محکوم به آزادی هستی.', quote:'وجود بر ماهیت مقدم است.', method:'پاسخ را در انتخاب تو می‌جوید؛ هیچ ذات آماده‌ای تو را معاف نمی‌کند.'},
+  {id:'camus', name:'کامو', latin:'Camus', era:'پوچی/اگزیستانسیال', school:'existential', icon:'☼', core:'پوچی، طغیان، زیستن بی‌تسلیم، کرامت در جهان بی‌معنای قطعی', tagline:'باید سیزیف را خوشبخت تصور کرد.', quote:'پوچی از برخورد نیاز انسان به معنا با سکوت جهان زاده می‌شود.', method:'به‌جای فرار از پوچی، دعوت به زیستن روشن، شورمند و طغیانگر می‌کند.'},
+  {id:'heidegger', name:'هایدگر', latin:'Heidegger', era:'پدیدارشناسی/هستی‌شناسی', school:'existential', icon:'⌂', core:'هستی، دازاین، اصالت، بودن-سوی-مرگ، گشودگی جهان', tagline:'پیش از پاسخ، بپرس بودنِ این مسئله چگونه آشکار شده؟', quote:'انسان شبان هستی است.', method:'سؤال را از سطح کاربردی به سطح شیوه بودن و آشکارشدن جهان می‌برد.'},
+  {id:'kant', name:'کانت', latin:'Kant', era:'مدرن', school:'modern', icon:'◎', core:'وظیفه، عقل، خودآیینی، امر مطلق، کرامت انسان', tagline:'چنان عمل کن که اصل عملت قانون همگانی شود.', quote:'انسان را هرگز صرفاً وسیله مگیر، بلکه همواره غایت بدان.', method:'می‌سنجد آیا پاسخ تو می‌تواند قانون همگانی و محترم به کرامت انسان باشد؟'},
+  {id:'descartes', name:'دکارت', latin:'Descartes', era:'مدرن', school:'modern', icon:'◈', core:'شک روش‌مند، یقین، عقل، سوژه اندیشنده', tagline:'از شک آغاز کن تا به بنیاد برسی.', quote:'می‌اندیشم، پس هستم.', method:'با شک‌کردن در پیش‌فرض‌ها، دنبال گزاره‌ای روشن و متمایز می‌گردد.'},
+  {id:'spinoza', name:'اسپینوزا', latin:'Spinoza', era:'مدرن', school:'modern', icon:'∞', core:'وحدت طبیعت و خدا، ضرورت، فهم عواطف، آزادی از راه شناخت', tagline:'آزادی یعنی فهم ضرورت.', quote:'نه خندیدن، نه گریستن، بلکه فهمیدن.', method:'می‌خواهد علت‌های پنهان عاطفه و موقعیت را بفهمی تا از انفعال آزاد شوی.'},
+  {id:'hume', name:'هیوم', latin:'Hume', era:'تجربه‌گرایی', school:'modern', icon:'≈', core:'تجربه، عادت، تردید نسبت به علیت قطعی، نقش احساس در اخلاق', tagline:'ببین چه تجربه‌ای واقعاً پشت باور توست.', quote:'عقل برده عواطف است.', method:'از تو شاهد تجربی و منشأ روانی باورهایت را می‌خواهد.'},
+  {id:'buddha', name:'بودا', latin:'Buddha', era:'فلسفه شرقی', school:'eastern', icon:'◌', core:'رنج، دلبستگی، آگاهی، راه میانه، رهایی از چسبیدن', tagline:'رنج را ببین، ریشه‌اش را ببین، رهایش کن.', quote:'همه چیز گذراست.', method:'به دلبستگی، میل، ترس و امکان حضور آگاهانه نگاه می‌کند.'},
+  {id:'confucius', name:'کنفوسیوس', latin:'Confucius', era:'فلسفه چینی', school:'eastern', icon:'文', core:'اخلاق رابطه، آیین، انسانیت، خانواده، نظم اجتماعی', tagline:'انسان در رابطه‌ها ساخته می‌شود.', quote:'آنچه برای خود نمی‌پسندی، برای دیگران مپسند.', method:'پرسش را در شبکه مسئولیت‌ها، احترام و پرورش شخصیت بررسی می‌کند.'},
+  {id:'rumi', name:'مولانا', latin:'Rumi', era:'عرفان ایرانی', school:'eastern', icon:'☾', core:'عشق، تحول درونی، رهایی از خود کاذب، معنا از راه اتصال', tagline:'پرسش، دریا را در دل قطره بیدار می‌کند.', quote:'آنچه می‌جویی، تو را می‌جوید.', method:'مسئله را به زبان عشق، خودشناسی و عبور از منِ محدود می‌خواند.'}
+];
+
+const quickQuestions = [
+  'معنای زندگی چیست؟', 'آیا انسان واقعاً آزاد است؟', 'چطور با ترس از مرگ کنار بیایم؟',
+  'خوشبختی یعنی چه؟', 'آیا عشق عقلانی است؟', 'با رنج و شکست چه کنم؟',
+  'عدالت چیست؟', 'آیا خدا وجود دارد؟', 'چطور خودم را بشناسم؟', 'تکنولوژی با انسان چه می‌کند؟'
+];
+
+const topicMap = {
+  meaning:['معنا','زندگی','هدف','پوچ','پوچی','ارزش','چرایی'],
+  death:['مرگ','مردن','فنا','نیستی','ترس از مرگ'],
+  freedom:['آزاد','آزادی','انتخاب','اجبار','مسئولیت','اختیار'],
+  happiness:['خوشبخت','خوشحالی','شادی','لذت','آرامش','رضایت'],
+  love:['عشق','دوست داشتن','رابطه','معشوق','دل'],
+  suffering:['رنج','درد','شکست','اضطراب','افسردگی','غم','تنهایی'],
+  ethics:['اخلاق','خوب','بد','درست','غلط','وظیفه','باید'],
+  justice:['عدالت','حق','ظلم','قانون','جامعه','قدرت'],
+  knowledge:['دانش','حقیقت','شناخت','واقعیت','باور','یقین'],
+  god:['خدا','دین','ایمان','معنوی','الهی'],
+  technology:['تکنولوژی','هوش مصنوعی','ماشین','مدرن','رسانه','اینترنت'],
+  self:['خود','من','هویت','خودشناسی','کیستم','شخصیت']
+};
+
+const topicHints = {
+  meaning:'مسئله تو بوی معنا، هدف و ارزش زندگی می‌دهد.',
+  death:'در پرسش تو سایه مرگ، فناپذیری یا اضطراب پایان دیده می‌شود.',
+  freedom:'محور پرسش، آزادی، انتخاب و مسئولیت است.',
+  happiness:'پرسش به شادی، آرامش یا زندگی خوب مربوط است.',
+  love:'مسئله با عشق، رابطه و پیوند انسانی درگیر است.',
+  suffering:'در پرسش تو رنج، شکست، اضطراب یا تحمل وضعیت دشوار برجسته است.',
+  ethics:'پرسش تو رنگ اخلاقی دارد: چه باید کرد؟',
+  justice:'مسئله به عدالت، قدرت، قانون یا حق مربوط است.',
+  knowledge:'پرسش درباره حقیقت، شناخت و اعتبار باورهاست.',
+  god:'پرسش به امر الهی، ایمان یا بنیاد معنوی اشاره دارد.',
+  technology:'مسئله به نسبت انسان و تکنولوژی/جهان مدرن مربوط است.',
+  self:'محور پرسش خودشناسی، هویت و نسبت تو با خودت است.',
+  general:'پرسش تو عمومی است و می‌شود آن را از چند مسیر فلسفی خواند.'
+};
+
+const philosopherTemplates = {
+  socrates:{
+    base:'سقراط احتمالاً قبل از پاسخ دادن، خودِ واژه‌های سؤال را به پرسش می‌گیرد. او می‌پرسد: دقیقاً منظورت از «{key}» چیست؟ اگر نتوانیم تعریف روشن بدهیم، شاید مسئله را هنوز درست ندیده‌ایم. پاسخ سقراطی این است که از گفت‌وگوی صادقانه با خود شروع کنی: پیش‌فرض‌هایت را بنویس، مثال نقض پیدا کن، و ببین آیا زندگی‌ات با چیزی که می‌گویی هماهنگ است یا نه.',
+    deep:'در خوانش سقراطی، سؤال تو دعوتی است به مراقبت از روح. مهم‌تر از رسیدن به یک جواب سریع، این است که بفهمی چه نوع انسانی با این پاسخ ساخته می‌شود. اگر پاسخ تو تو را عادل‌تر، شجاع‌تر و خردمندتر نکند، احتمالاً هنوز پاسخ فلسفی نیست.',
+    short:'سقراط می‌گوید: اول تعریف کن، بعد داوری کن. زندگیِ نیازموده پاسخ آماده نمی‌خواهد؛ پرسش دقیق می‌خواهد.'
+  },
+  plato:{base:'افلاطون مسئله را از سطح روزمره به سوی «صورتِ» حقیقی آن می‌برد. اگر درباره {key} می‌پرسی، باید بپرسی نمونه کامل و درست آن چیست، نه فقط سایه‌های ناقصش در تجربه روزانه. پاسخ افلاطونی می‌گوید روح باید از میل‌های پراکنده بالاتر برود و خود را با خیر، حقیقت و عدالت هماهنگ کند.',deep:'از نگاه افلاطون، بسیاری از سرگردانی‌های ما شبیه زندانیان غار است: سایه‌ها را واقعیت می‌پنداریم. راه حل، تربیت نگاه است؛ یعنی تمرین دیالکتیک، فاصله گرفتن از ظاهر و رو کردن به خیر. پاسخ درست آن است که روح را منظم‌تر و جامعه را عادلانه‌تر کند.',short:'افلاطون می‌گوید: از سایه‌ها عبور کن و صورت حقیقی مسئله را در نسبت با خیر ببین.'},
+  aristotle:{base:'ارسطو به جای پاسخ انتزاعی، می‌پرسد غایت این مسئله چیست و چه عادتی انسان را به شکوفایی می‌رساند. درباره {key}، پاسخ او احتمالاً این است: حد میانه را پیدا کن، نه افراط و نه تفریط. فضیلت با یک تصمیم ساخته نمی‌شود؛ با تمرین‌های کوچک و مکرر ساخته می‌شود.',deep:'در نگاه ارسطویی، زندگی خوب پروژه‌ای عملی است. باید ببینی این انتخاب چه اثری بر منش تو دارد. آیا تو را شجاع‌تر، عادل‌تر، بخشنده‌تر و خردمندتر می‌کند؟ اگر آری، به سعادت نزدیک‌تر است. اگر فقط هیجان لحظه‌ای می‌دهد اما شخصیت را تخریب می‌کند، خیر پایدار نیست.',short:'ارسطو می‌گوید: غایت را بشناس، حد میانه را نگه دار، و با عادت خوب خودت را بساز.'},
+  epicurus:{base:'اپیکور سؤال تو را با معیار آرامش می‌سنجد. آیا این نگرانی طبیعی و ضروری است، یا ترسی اضافه که ذهن ساخته؟ درباره {key}، او می‌گوید بسیاری از رنج‌ها از میل‌های بی‌پایان، مقایسه، جاه‌طلبی و ترس‌های مبهم می‌آیند. زندگی ساده، دوستی و فهم مرگ می‌تواند روح را سبک‌تر کند.',deep:'اپیکوری بودن یعنی لذت سطحی‌پرستی نیست؛ یعنی مدیریت رنج. اگر چیزی آرامش پایدار را نابود می‌کند، حتی اگر جذاب باشد، خیر نیست. اگر چیزی ساده و کوچک است اما اضطراب را کم می‌کند، ارزشمند است. پاسخ اپیکور: نیازهای ضروری را از میل‌های بی‌انتها جدا کن.',short:'اپیکور می‌گوید: ساده‌تر زندگی کن، از ترس‌های خیالی کم کن، و آرامش را با لذت زودگذر اشتباه نگیر.'},
+  marcus:{base:'مارکوس اورلیوس ابتدا مرز کنترل را مشخص می‌کند. درباره {key}، بپرس: چه بخشی در اختیار من است؟ داوری، نیت، گفتار و کردار من. چه بخشی نیست؟ نظر دیگران، گذشته، شانس و بسیاری از نتایج. پس انرژی را روی کردار درست بگذار و با باقی چیزها مثل بخشی از طبیعت روبه‌رو شو.',deep:'رواقی‌گری فرار از احساس نیست؛ تربیت داوری است. اگر رنج از خود رویداد نمی‌آید بلکه از تفسیر ما می‌آید، می‌توان تفسیر را تمرین داد. وظیفه تو این نیست که جهان را مطابق میل خود کنی؛ وظیفه تو این است که در جهان ناپایدار، درست، آرام و شریف عمل کنی.',short:'مارکوس می‌گوید: آنچه در کنترل توست انجام بده؛ آنچه نیست با وقار بپذیر.'},
+  nietzsche:{base:'نیچه به ریشه پنهان سؤال شک می‌کند: آیا این پرسش از ترس می‌آید یا از نیروی آفرینش؟ درباره {key}، او می‌پرسد آیا ارزش‌هایی که با آن قضاوت می‌کنی مال خودت هستند یا از گله به ارث برده‌ای؟ پاسخ نیچه‌ای دعوت به آری گفتن به زندگی، حتی با سختی‌هایش، و آفرینش ارزش‌های شخصی است.',deep:'نیچه احتمالاً با پاسخ‌های آرام‌بخش مشکل دارد. او می‌گوید رنج همیشه دشمن نیست؛ گاهی ماده خام دگرگونی است. سؤال مهم این است: آیا این تجربه تو را نیرومندتر، صادق‌تر و خلاق‌تر می‌کند؟ از اخلاقی که فقط ضعف را زیبا می‌کند بپرهیز؛ اما قدرت را هم با سلطه کور اشتباه نگیر.',short:'نیچه می‌گوید: از ترس ارزش نساز؛ زندگی را با همه سختی‌اش بپذیر و ارزش خودت را خلق کن.'},
+  sartre:{base:'سارتر پاسخ را به آزادی و مسئولیت برمی‌گرداند. درباره {key}، هیچ ذات آماده‌ای وجود ندارد که به جای تو تصمیم بگیرد. حتی تصمیم نگرفتن هم یک انتخاب است. اگر پشت «شرایط»، «طبیعت من» یا «نظر دیگران» پنهان شوی، در بدایمانی افتاده‌ای. اصالت یعنی قبول کنی با انتخاب‌هایت خودت را می‌سازی.',deep:'از نگاه سارتر، انسان اول وجود دارد و سپس با عملش ماهیت خود را می‌سازد. بنابراین پاسخ درست، نسخه‌ای بیرونی نیست؛ پروژه‌ای است که تو مسئولش هستی. اما این آزادی سنگین است، چون هر انتخاب تو تصویری از انسان مطلوب نیز پیشنهاد می‌کند.',short:'سارتر می‌گوید: تو آزادی؛ پس مسئول انتخاب و معنایی هستی که می‌سازی.'},
+  camus:{base:'کامو در سؤال تو احتمالاً تنش میان نیاز به معنا و سکوت جهان را می‌بیند. درباره {key}، شاید جواب قطعی کیهانی پیدا نشود؛ اما این پایان زندگی نیست. پاسخ کامویی این است: پوچی را واضح ببین، دروغ تسلی‌بخش نساز، و با این حال زندگی کن، دوست بدار، کار کن و طغیان کوچک روزانه‌ات را حفظ کن.',deep:'کامو نه تسلیم ناامیدی می‌شود و نه به معنای آماده فرار می‌کند. او می‌گوید کرامت انسان در روشن‌بینی و طغیان است. اگر جهان پاسخ نهایی نمی‌دهد، ما می‌توانیم با عمل، همبستگی و زیبایی لحظه‌ای، زندگی را قابل زیستن کنیم.',short:'کامو می‌گوید: شاید معنای نهایی نیابی؛ اما می‌توانی روشن، شریف و طغیانگر زندگی کنی.'},
+  heidegger:{base:'هایدگر سؤال را از سطح راه‌حل به سطح «بودن» می‌برد. درباره {key}، می‌پرسد این مسئله چگونه جهان تو را گشوده کرده است؟ آیا تو اصیل با آن روبه‌رو می‌شوی یا در حرف‌های روزمره و نظر جمع گم شده‌ای؟ مواجهه با محدودیت، به‌خصوص مرگ، می‌تواند تو را به انتخاب اصیل برگرداند.',deep:'در نگاه هایدگری، انسان چیزی جدا از جهان نیست؛ ما همیشه در-جهان-بودن هستیم. پس مسئله تو فقط یک مشکل ذهنی نیست، بلکه شیوه‌ای است که جهان برای تو معنادار یا بی‌معنا شده. پاسخ، بازگشت به حضوری اصیل‌تر است؛ شنیدن ندای وجدان و بیرون آمدن از «همه این‌طورند».',short:'هایدگر می‌گوید: از روزمرگی بیرون بیا و ببین این سؤال چه نسبتی با بودنِ اصیل تو دارد.'},
+  kant:{base:'کانت مسئله را با معیار وظیفه و کرامت می‌سنجد. درباره {key}، بپرس آیا اصل رفتارت می‌تواند قانونی همگانی شود؟ و آیا انسان‌ها را غایت می‌گیری یا فقط وسیله؟ پاسخ کانتی ممکن است سختگیرانه باشد، اما می‌خواهد آزادی را با عقل و احترام به کرامت انسان پیوند بزند.',deep:'برای کانت، اخلاق به نتیجه دلخواه وابسته نیست، بلکه به اصل عقلانی عمل وابسته است. اگر پاسخ تو فقط وقتی خوب است که به نفع تو تمام شود، اخلاقی نیست. پاسخ درست باید بتواند در برابر جهان بایستد و بگوید: این اصل برای همه قابل احترام است.',short:'کانت می‌گوید: طوری عمل کن که قاعده کارت قانون همگانی باشد و انسان را وسیله نکن.'},
+  descartes:{base:'دکارت با شک روش‌مند شروع می‌کند. درباره {key}، ابتدا باورهای مبهم، شنیده‌ها و عادت‌های فکری را کنار بگذار. چه چیزی را واقعاً روشن و متمایز می‌دانی؟ اگر بنیاد یقین پیدا نشود، شاید باید مسئله را به اجزای کوچک‌تر تقسیم کرد و قدم‌به‌قدم پیش رفت.',deep:'پاسخ دکارتی به تو نظم ذهنی می‌دهد: مسئله را تجزیه کن، از ساده‌ترین امر شروع کن، و فقط چیزی را بپذیر که دلیل کافی دارد. این نگاه برای پرسش‌هایی مفید است که در آن‌ها آشفتگی، شایعه یا احساسات شدید مانع داوری شده‌اند.',short:'دکارت می‌گوید: شک کن، مسئله را خرد کن، و از امر روشن شروع کن.'},
+  spinoza:{base:'اسپینوزا می‌پرسد علت‌های این وضعیت چیستند. درباره {key}، اگر فقط خشم، ترس یا امید مبهم داشته باشی، منفعل می‌مانی. هرچه علت‌ها را دقیق‌تر بفهمی، آزادتر می‌شوی. آزادی برای اسپینوزا انتخاب بی‌علت نیست؛ فهم ضرورت و تبدیل انفعال به کنش است.',deep:'در نگاه اسپینوزایی، عاطفه دشمن عقل نیست؛ عاطفه‌ای است که باید فهمیده شود. وقتی بفهمی چرا چیزی تو را می‌رنجاند، دیگر صرفاً قربانی آن نیستی. پاسخ او دعوت به دیدن خود و جهان در شبکه علت‌هاست؛ با فهم بیشتر، آرامش فعال‌تری پدید می‌آید.',short:'اسپینوزا می‌گوید: علت‌ها را بفهم؛ فهم، انفعال را به آزادی تبدیل می‌کند.'},
+  hume:{base:'هیوم می‌پرسد چه تجربه‌ای پشت این باور است. درباره {key}، شاید چیزی را قطعی می‌پنداری که در واقع عادت ذهن یا احساس تکرارشونده است. او یادآوری می‌کند اخلاق و تصمیم‌های ما فقط از عقل خشک نمی‌آیند؛ احساسات، همدلی و تجربه نقش مهمی دارند.',deep:'خوانش هیومی تو را فروتن می‌کند. بسیاری از یقین‌های ما از عادت، تربیت و تداعی ذهنی می‌آیند. پس به جای ادعای قطعیت، شواهد را ببین، با تجربه‌های دیگر مقایسه کن، و نقش احساس را انکار نکن. عقل راهنماست، اما موتور حرکت انسان اغلب عاطفه است.',short:'هیوم می‌گوید: شواهدت را بررسی کن؛ شاید یقین تو فقط عادت ذهن باشد.'},
+  buddha:{base:'بودا سؤال تو را با رنج و دلبستگی می‌خواند. درباره {key}، بپرس به چه چیزی چسبیده‌ای که تغییر آن تو را می‌آزارد؟ رهایی با انکار رنج نیست؛ با دیدن روشن رنج، علت آن و تمرین راه میانه آغاز می‌شود. حضور آگاهانه، میل کور را آرام می‌کند.',deep:'از نگاه بودایی، بسیاری از اضطراب‌ها از این توهم می‌آیند که چیزهای گذرا باید ثابت بمانند. اگر گذرایی را عمیق ببینی، رابطه‌ات با خواستن، از دست دادن و ترس تغییر می‌کند. پاسخ، تمرین است: آگاهی، شفقت، گفتار درست و عمل درست.',short:'بودا می‌گوید: رنج را ببین، دلبستگی‌اش را بشناس، و با آگاهی رهایش کن.'},
+  confucius:{base:'کنفوسیوس مسئله را در رابطه‌ها می‌بیند. درباره {key}، فقط نپرس «من چه می‌خواهم؟»؛ بپرس «در این رابطه، نقش درست من چیست؟» انسانیت، احترام، آیین و مسئولیت اجتماعی پاسخ را شکل می‌دهند. شخصیت خوب در رفتار روزمره با خانواده، دوست، شاگرد، استاد و جامعه ساخته می‌شود.',deep:'در نگاه کنفوسیوسی، آزادی بی‌ریشه کافی نیست؛ انسان با تربیت رابطه‌ها شکوفا می‌شود. اگر پاسخ تو نظم، احترام و انسانیت را در شبکه زندگی بیشتر کند، به راه نزدیک‌تر است. اخلاق از کارهای کوچک و تکراری شروع می‌شود، نه شعارهای بزرگ.',short:'کنفوسیوس می‌گوید: پاسخ را در مسئولیت، احترام و کیفیت رابطه‌هایت پیدا کن.'},
+  rumi:{base:'مولانا سؤال تو را به زبان عشق و تحول درونی می‌خواند. درباره {key}، شاید مسئله فقط بیرونی نیست؛ شاید پرده‌ای از خودِ محدود توست. پاسخ مولانایی دعوت می‌کند از ترس و حسابگری صرف عبور کنی و ببینی این رنج یا پرسش چه دری را درونت باز می‌کند.',deep:'در نگاه عرفانی، گاهی سؤال مثل موج است؛ می‌آید تا ساحل عادت را بشکند. معنا نه فقط در استدلال، بلکه در دگرگونی دل پیدا می‌شود. اما این به معنای بی‌عقلی نیست؛ یعنی عقل باید با عشق و حضور همراه شود تا خشک و خودبسته نماند.',short:'مولانا می‌گوید: از ظاهر مسئله عبور کن؛ شاید پاسخ در دگرگونی دل توست.'}
+};
+
+function $(id){return document.getElementById(id)}
+function detectTopics(q){
+  const text = q.toLowerCase();
+  const found=[];
+  for(const [topic, words] of Object.entries(topicMap)){
+    if(words.some(w => text.includes(w.toLowerCase()))) found.push(topic);
+  }
+  return found.length ? found : ['general'];
+}
+function mainKey(q, topics){
+  if(!q.trim()) return 'این مسئله';
+  const t = topics[0];
+  const map = {meaning:'معنا', death:'مرگ', freedom:'آزادی', happiness:'خوشبختی', love:'عشق', suffering:'رنج', ethics:'اخلاق', justice:'عدالت', knowledge:'حقیقت', god:'امر الهی', technology:'تکنولوژی', self:'خودشناسی', general:'این مسئله'};
+  return map[t] || 'این مسئله';
+}
+function composeAnswer(ph, q, mode, topics){
+  const tpl = philosopherTemplates[ph.id];
+  const key = mainKey(q, topics);
+  let text = (mode === 'short') ? tpl.short : tpl.base;
+  text = text.replaceAll('{key}', key);
+  if(mode === 'deep') text += ' ' + tpl.deep;
+  if(mode === 'poetic') text += ' اگر بخواهیم شاعرانه‌تر بگوییم: پرسش تو مثل موجی است که نشان می‌دهد زیر سطح آرام زندگی، جریان عمیق‌تری حرکت می‌کند؛ پاسخ این فیلسوف، دعوت به دیدن همان جریان است.';
+  if(mode === 'balanced') text += ' نتیجه عملی: یک جمله از پرسشت را دقیق‌تر تعریف کن، یک عمل کوچک مطابق این دیدگاه انتخاب کن، و اثرش را در زندگی واقعی بسنج.';
+  return text;
+}
+function selectedPhilosophers(){
+  const school = $('filterSchool').value;
+  let list = philosophers.filter(p => school === 'all' || p.school === school);
+  const count = $('countSelect').value;
+  if(count !== 'all') list = list.slice(0, Number(count));
+  return list;
+}
+function renderAnswers(customList=null){
+  const q = $('question').value.trim();
+  if(!q){showToast('اول یک سؤال بنویس.'); $('question').focus(); return;}
+  const mode = $('mode').value;
+  const topics = detectTopics(q);
+  const list = customList || selectedPhilosophers();
+  const answers = $('answers');
+  answers.innerHTML = '';
+  $('resultMeta').textContent = `${list.length} دیدگاه | ${topicHints[topics[0]] || topicHints.general}`;
+  for(const ph of list){
+    const card = document.createElement('article');
+    card.className = 'answer-card';
+    card.innerHTML = `
+      <div class="answer-head">
+        <div class="avatar">${ph.icon}</div>
+        <div><h3>${ph.name} <span class="era">/ ${ph.latin}</span></h3><div class="era">${ph.era}</div></div>
+      </div>
+      <p class="answer-text">${composeAnswer(ph, q, mode, topics)}</p>
+      <div class="quote">«${ph.quote}»</div>
+      <div class="meta"><span>${ph.core}</span><span>${ph.method}</span></div>
+    `;
+    answers.appendChild(card);
+  }
+  $('resultsCard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+function renderLibrary(){
+  const lib = $('library'); lib.innerHTML='';
+  philosophers.forEach(ph => {
+    const d = document.createElement('div');
+    d.className = 'philo-card';
+    d.innerHTML = `<div class="answer-head"><div class="avatar">${ph.icon}</div><div><h3>${ph.name}</h3><div class="era">${ph.latin} — ${ph.era}</div></div></div><p class="tagline">${ph.tagline}</p><p>${ph.core}</p>`;
+    d.onclick = () => {
+      if(!$('question').value.trim()) $('question').value = 'زندگی خوب یعنی چه؟';
+      renderAnswers([ph]);
+    };
+    lib.appendChild(d);
+  });
+}
+function renderQuickQuestions(){
+  const box = $('quickQuestions'); box.innerHTML='';
+  quickQuestions.forEach((qq,i)=>{
+    const c=document.createElement('span'); c.className='chip'; c.textContent=qq;
+    c.onclick=()=>{[...box.children].forEach(x=>x.classList.remove('active')); c.classList.add('active'); $('question').value=qq;};
+    box.appendChild(c);
+  });
+}
+function randomQuestion(){
+  const q = quickQuestions[Math.floor(Math.random()*quickQuestions.length)];
+  $('question').value = q;
+  showToast('پرسش تصادفی انتخاب شد.');
+}
+function copyAnswers(){
+  const q = $('question').value.trim();
+  const cards = [...document.querySelectorAll('.answer-card')];
+  if(!cards.length){showToast('هنوز پاسخی ساخته نشده.'); return;}
+  let text = `سؤال: ${q}\n\n`;
+  cards.forEach(card => {
+    text += card.querySelector('h3').innerText + '\n';
+    text += card.querySelector('.answer-text').innerText + '\n';
+    text += card.querySelector('.quote').innerText + '\n\n';
+  });
+  navigator.clipboard?.writeText(text).then(()=>showToast('پاسخ‌ها کپی شد.')).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();showToast('پاسخ‌ها کپی شد.');
+  });
+}
+function clearAll(){
+  $('question').value=''; $('answers').innerHTML=''; $('resultMeta').textContent='هنوز سؤالی پرسیده نشده است.';
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+}
+let toastTimer;
+function showToast(msg){
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),1900);
+}
+
+$('answerBtn').addEventListener('click',()=>renderAnswers());
+$('clearBtn').addEventListener('click',clearAll);
+$('randomBtn').addEventListener('click',randomQuestion);
+$('copyBtn').addEventListener('click',copyAnswers);
+$('question').addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter') renderAnswers();});
+renderQuickQuestions();
+renderLibrary();
+$('question').value = 'معنای زندگی چیست و چطور می‌شود با رنج کنار آمد؟';
+renderAnswers();
+</script>
+</body>
+</html>
